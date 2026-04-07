@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Wali Songo Lengkap</title>
+
+<style>
+body {font-family: Arial; margin:0; background:#eef2f3;}
+
+#loginPage {display:flex; justify-content:center; align-items:center; height:100vh;}
+.login-box {background:white; padding:20px; border-radius:10px; text-align:center;}
+
+input {padding:10px; margin:10px; width:80%;}
+button {padding:10px; margin:5px; background:green; color:white; border:none; border-radius:5px;}
+
+#mainPage {display:none;}
+
+header {background:green; color:white; text-align:center; padding:20px;}
+
+nav {background:#222; text-align:center; padding:10px;}
+nav button {margin:5px;}
+
+.page {display:none; padding:20px;}
+.active {display:block;}
+
+.card {
+  background:white;
+  padding:15px;
+  margin:15px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+img {width:200px; border-radius:10px;}
+</style>
+
+<script>
+let nilai = 0;
+
+function login(){
+ let u=document.getElementById("user").value;
+ let p=document.getElementById("pass").value;
+ if(u==="zohar" && p==="123"){
+  loginPage.style.display="none";
+  mainPage.style.display="block";
+ }else{
+  alert("Login salah!");
+ }
+}
+
+function bukaHalaman(id){
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+}
+
+function jawab(benar){
+ if(benar){
+  alert("Benar!");
+  nilai += 10;
+ } else {
+  alert("Salah!");
+ }
+ document.getElementById("skor").innerText = "Skor: " + nilai;
+}
+</script>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage">
+<div class="login-box">
+<h2>Login</h2>
+<input id="user" placeholder="Username"><br>
+<input id="pass" type="password" placeholder="Password"><br>
+<button onclick="login()">Masuk</button>
+</div>
+</div>
+
+<!-- MAIN -->
+<div id="mainPage">
+
+<header>
+<h1>Wali Songo</h1>
+</header>
+
+<nav>
+<button onclick="bukaHalaman('home')">Home</button>
+<button onclick="bukaHalaman('wali')">Data Wali</button>
+<button onclick="bukaHalaman('kisah')">Kisah</button>
+<button onclick="bukaHalaman('kuis')">Kuis</button>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="page active" style="text-align:center;">
+<h1 style="color:green;">🌙 Selamat Datang di Website Wali Songo 🌙</h1>
+<p>Menjelajahi sejarah penyebaran Islam di Indonesia ✨</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sunan_Kalijaga.jpg">
+<p><b>Isi Website:</b></p>
+<ul style="list-style:none;">
+<li>📖 Kisah</li>
+<li>📅 Lahir & Wafat</li>
+<li>❓ Kuis</li>
+</ul>
+</div>
+
+<!-- DATA WALI -->
+<div id="wali" class="page">
+<div class="card"><h3>Sunan Gresik</h3><p>Lahir: ?</p><p>Wafat: 1419</p></div>
+<div class="card"><h3>Sunan Ampel</h3><p>Lahir: 1401</p><p>Wafat: 1481</p></div>
+<div class="card"><h3>Sunan Bonang</h3><p>Lahir: 1465</p><p>Wafat: 1525</p></div>
+<div class="card"><h3>Sunan Drajat</h3><p>Lahir: 1470</p><p>Wafat: 1522</p></div>
+<div class="card"><h3>Sunan Giri</h3><p>Lahir: 1442</p><p>Wafat: 1506</p></div>
+<div class="card"><h3>Sunan Kalijaga</h3><p>Lahir: 1450</p><p>Wafat: 1513</p></div>
+<div class="card"><h3>Sunan Kudus</h3><p>Lahir: 1500</p><p>Wafat: 1550</p></div>
+<div class="card"><h3>Sunan Muria</h3><p>Lahir: 1480</p><p>Wafat: 1551</p></div>
+<div class="card"><h3>Sunan Gunung Jati</h3><p>Lahir: 1448</p><p>Wafat: 1568</p></div>
+</div>
+
+<!-- KISAH -->
+<div id="kisah" class="page">
+
+<div class="card"><h3>Sunan Gresik</h3>
+<p>Sunan Gresik dikenal sebagai pelopor penyebaran Islam di Jawa. Beliau berdakwah dengan cara damai dan membantu masyarakat dalam kehidupan sehari-hari.</p></div>
+
+<div class="card"><h3>Sunan Ampel</h3>
+<p>Sunan Ampel mendirikan pesantren dan menjadi guru para wali. Dakwahnya dilakukan melalui pendidikan dan pendekatan lembut.</p></div>
+
+<div class="card"><h3>Sunan Bonang</h3>
+<p>Sunan Bonang berdakwah menggunakan musik gamelan sehingga masyarakat mudah menerima Islam.</p></div>
+
+<div class="card"><h3>Sunan Drajat</h3>
+<p>Sunan Drajat fokus pada kegiatan sosial dan membantu masyarakat yang membutuhkan.</p></div>
+
+<div class="card"><h3>Sunan Giri</h3>
+<p>Sunan Giri mendirikan pesantren besar dan menyebarkan Islam melalui pendidikan.</p></div>
+
+<div class="card"><h3>Sunan Kalijaga</h3>
+<p>Sunan Kalijaga menggunakan wayang dan budaya lokal sebagai media dakwah.</p></div>
+
+<div class="card"><h3>Sunan Kudus</h3>
+<p>Sunan Kudus menghormati budaya lokal dalam berdakwah.</p></div>
+
+<div class="card"><h3>Sunan Muria</h3>
+<p>Sunan Muria menyebarkan Islam di daerah pedesaan.</p></div>
+
+<div class="card"><h3>Sunan Gunung Jati</h3>
+<p>Sunan Gunung Jati menyebarkan Islam di wilayah Cirebon.</p></div>
+
+</div>
+
+<!-- KUIS -->
+<div id="kuis" class="page">
+
+<h2>Kuis Wali Songo</h2>
+
+<div class="card">
+<p>1. Siapa berdakwah dengan wayang?</p>
+<button onclick="jawab(true)">Sunan Kalijaga</button>
+<button onclick="jawab(false)">Sunan Giri</button>
+<button onclick="jawab(false)">Sunan Ampel</button>
+</div>
+
+<div class="card">
+<p>2. Siapa wali dari Cirebon?</p>
+<button onclick="jawab(false)">Sunan Kudus</button>
+<button onclick="jawab(true)">Sunan Gunung Jati</button>
+<button onclick="jawab(false)">Sunan Bonang</button>
+</div>
+
+<div class="card">
+<p>3. Siapa pendiri pesantren?</p>
+<button onclick="jawab(true)">Sunan Ampel</button>
+<button onclick="jawab(false)">Sunan Muria</button>
+<button onclick="jawab(false)">Sunan Drajat</button>
+</div>
+
+<div class="card">
+<p>4. Siapa pelopor Islam di Jawa?</p>
+<button onclick="jawab(true)">Sunan Gresik</button>
+<button onclick="jawab(false)">Sunan Kudus</button>
+<button onclick="jawab(false)">Sunan Muria</button>
+</div>
+
+<div class="card">
+<p>5. Siapa berdakwah dengan gamelan?</p>
+<button onclick="jawab(false)">Sunan Giri</button>
+<button onclick="jawab(true)">Sunan Bonang</button>
+<button onclick="jawab(false)">Sunan Drajat</button>
+</div>
+
+<div class="card">
+<p>6. Siapa fokus sosial?</p>
+<button onclick="jawab(false)">Sunan Kalijaga</button>
+<button onclick="jawab(true)">Sunan Drajat</button>
+<button onclick="jawab(false)">Sunan Ampel</button>
+</div>
+
+<div class="card">
+<p>7. Siapa menyebarkan Islam di desa?</p>
+<button onclick="jawab(false)">Sunan Kudus</button>
+<button onclick="jawab(false)">Sunan Bonang</button>
+<button onclick="jawab(true)">Sunan Muria</button>
+</div>
+
+<div class="card">
+<p>8. Siapa wali dari Kudus?</p>
+<button onclick="jawab(true)">Sunan Kudus</button>
+<button onclick="jawab(false)">Sunan Giri</button>
+<button onclick="jawab(false)">Sunan Ampel</button>
+</div>
+
+<div class="card">
+<p>9. Siapa lahir tahun 1442?</p>
+<button onclick="jawab(true)">Sunan Giri</button>
+<button onclick="jawab(false)">Sunan Kalijaga</button>
+<button onclick="jawab(false)">Sunan Bonang</button>
+</div>
+
+<div class="card">
+<p>10. Siapa wafat tahun 1568?</p>
+<button onclick="jawab(false)">Sunan Muria</button>
+<button onclick="jawab(true)">Sunan Gunung Jati</button>
+<button onclick="jawab(false)">Sunan Ampel</button>
+</div>
+
+<h3 id="skor">Skor: 0</h3>
+
+</div>
+
+</div>
+
+</body>
+</html>
